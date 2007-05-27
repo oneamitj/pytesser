@@ -1,4 +1,5 @@
 #summary Contents of README from package
+#labels Featured
 {{{
 Introduction:
 ============
