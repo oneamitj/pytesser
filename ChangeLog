@@ -1,0 +1,19 @@
+May 25, 2007 - V0.0.2
+Enhancements:
+* Upgraded to v1.04 of Tesseract OCR
+* Whitespace stripped from end of output text.
+Changes:
+* Instead of tesseract.exe, uses tessdll.dll and dlltest-mod.exe (to expose Tesseract internals)
+* External process now called with shell=True
+* Now requires v1.1.6 or higher of PIL library
+Bug fixes:
+* Changing working directory no longer causes pytesser calls to fail
+* Tesseract's output to stderr redirected so as not to print to screen 
+[WARNING: for compatibility with IDEs such as PythonWin, a possible exception in the redirection is
+caught in a not very elegant way]
+* 'RGBA' mode image objects (and others causing same error) now converted to 'RGB' mode 
+to properly save to disk
+* Improvement to error catching in *nix.  
+(Thanks to commenter Philip for code and suggestions fixing several bugs.)
+
+May 05, 2007 - V0.0.1 - First release of PyTesser
