@@ -1,7 +1,7 @@
 """OCR in Python using the Tesseract engine from Google
 http://code.google.com/p/pytesser/
 by Michael J.T. O'Kelly
-V 0.0.1, 3/10/07"""
+V 0.0.2, 5/26/08"""
 
 import Image
 import subprocess
@@ -12,7 +12,7 @@ import util
 import errors
 
 
-tesseract_exe_name = 'dlltest-mod' # Name of executable to be called at command line
+tesseract_exe_name = 'dlltest' # Name of executable to be called at command line
 scratch_image_name = "temp.bmp" # This file must be .bmp or other Tesseract-compatible format
 scratch_text_name_root = "temp" # Leave out the .txt extension
 _cleanup_scratch_flag = True  # Temporary files cleaned up after OCR operation
@@ -29,7 +29,7 @@ def call_tesseract(input_filename, output_filename):
 		args = [tesseract_exe_name, input_filename, output_filename]
 		try:
 			proc = subprocess.Popen(args,stderr=error_stream, shell=True)
-		except TypeError:
+		except (TypeError, AttributeError):
 			proc = subprocess.Popen(args, shell=True)
 		retcode = proc.wait()
 		if retcode!=0:
