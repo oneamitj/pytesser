@@ -1,3 +1,4 @@
+# -*- coding: ascii -*-
 from PIL import Image
 import subprocess
 import os

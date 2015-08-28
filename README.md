@@ -23,7 +23,7 @@ Dependencies:
 =============
 - PIL is required to work with images in memory.
 >https://pypi.python.org/pypi/Pillow/
-- This version of PyTesser has been tested with Python 3.4 in Windows 10 and Ubuntu 14.04 LTS.
+- This version of PyTesser has been tested with Python 3.4 in Windows 10 and Python 2.7 in Ubuntu 14.04 LTS.
 - For Linux:
 	+ Add executable permission to all .exe file `chmod +x dlltest.exe tesseract.exe`
 	+ Install wine `sudo apt-get install wine`

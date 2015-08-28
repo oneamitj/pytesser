@@ -1,3 +1,5 @@
+# -*- coding: ascii -*-
+
 """Utility functions for processing images for delivery to Tesseract"""
 
 import os
