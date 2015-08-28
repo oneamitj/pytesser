@@ -8,7 +8,7 @@ class Tesser_Invalid_Filetype(Tesser_General_Exception):
 
 def check_for_errors(logfile = "tesseract.log", error_stream_text = ""):
 	try:
-		inf = file(logfile)
+		inf = open(logfile)
 		error_stream_text += inf.read()
 		inf.close()
 	except IOError:

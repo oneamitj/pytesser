@@ -2,8 +2,10 @@ PyTesser was written by
 Michael J.T. O'Kelly  <mokelly@mit.edu>
 
 ----------------------------------
-Changes to Py3 by
+
+Python 3 and Linux Compitable by
 Amit Joshi <wannamit@gmail.com>
+
 ----------------------------------
 
 The Tesseract engine was written by

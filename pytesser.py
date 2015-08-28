@@ -2,12 +2,13 @@ from PIL import Image
 import subprocess
 import os
 import io
+import sys
 
 import util
 import errors
 
 
-tesseract_exe_name = 'dlltest' # Name of executable to be called at command line
+tesseract_exe_name = 'dlltest.exe' # Name of executable to be called at command line
 scratch_image_name = "temp.bmp" # This file must be .bmp or other Tesseract-compatible format
 scratch_text_name_root = "temp" # Leave out the .txt extension
 _cleanup_scratch_flag = True  # Temporary files cleaned up after OCR operation
@@ -23,18 +24,25 @@ def call_tesseract(input_filename, output_filename, language, pagesegmode):
 	error_stream = io.StringIO()
 	try:
 		os.chdir(_working_dir)
-		args = [tesseract_exe_name, input_filename, output_filename]
+
+		if sys.platform == 'win32': #For windows based OS
+			args = [tesseract_exe_name, input_filename, output_filename]
+		else: #For unix based OS
+			args = ['wine',tesseract_exe_name, input_filename, output_filename]
+
 		if len(language) > 0:
- 			args.append("-l")
- 			args.append(language)
+			args.append("-l")
+			args.append(language)
 		if len(str(pagesegmode)) > 0:
- 			args.append("-psm")
- 			args.append(str(pagesegmode))
+			args.append("-psm")
+			args.append(str(pagesegmode))
 		try:
 			proc = subprocess.Popen(args)
 		except (TypeError, AttributeError):
 			proc = subprocess.Popen(args, shell=True)
 		retcode = proc.wait()
+		
+
 		if retcode!=0:
 			error_text = error_stream.getvalue()
 			errors.check_for_errors(error_stream_text = error_text)

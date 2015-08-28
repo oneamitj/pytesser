@@ -3,6 +3,8 @@
 *.pdf
 *.jpg
 *.png
+*.bmp
 *.tif
 *.pyc
 *.bak
+*.txt
