@@ -1,12 +1,7 @@
-"""OCR in Python using the Tesseract engine from Google
-http://code.google.com/p/pytesser/
-by Michael J.T. O'Kelly
-V 0.0.2, 5/26/08"""
-
-import Image
+from PIL import Image
 import subprocess
 import os
-import StringIO
+import io
 
 import util
 import errors
@@ -25,7 +20,7 @@ def call_tesseract(input_filename, output_filename, language, pagesegmode):
 	"""Calls external tesseract.exe on input file (restrictions on types),
 	outputting output_filename+'txt'"""
 	current_dir = os.getcwd()
-	error_stream = StringIO.StringIO()
+	error_stream = io.StringIO()
 	try:
 		os.chdir(_working_dir)
 		args = [tesseract_exe_name, input_filename, output_filename]
@@ -92,23 +87,23 @@ def image_file_to_string(filename, lang = _language, psm = _pagesegmode, cleanup
 	return result
 	
 
-if __name__=='__main__':
-	im = Image.open('phototest.tif')
-	text = image_to_string(im, cleanup=False)
-	print text
-	text = image_to_string(im, psm=2, cleanup=False)
-	print text
-	try:
-		text = image_file_to_string('fnord.tif', graceful_errors=False)
-	except errors.Tesser_General_Exception, value:
-		print "fnord.tif is incompatible filetype.  Try graceful_errors=True"
-		#print value
-	text = image_file_to_string('fnord.tif', graceful_errors=True, cleanup=False)
-	print "fnord.tif contents:", text
-	text = image_file_to_string('fonts_test.png', graceful_errors=True)
-	print text
-	text = image_file_to_string('fonts_test.png', lang="eng", psm=4, graceful_errors=True)
-	print text
+# if __name__=='__main__':
+# 	im = Image.open('phototest.tif')
+# 	text = image_to_string(im, cleanup=False)
+# 	print(text)
+# 	text = image_to_string(im, psm=2, cleanup=False)
+# 	print(text)
+# 	try:
+# 		text = image_file_to_string('fnord.tif', graceful_errors=False)
+# 	except errors.Tesser_General_Exception as value:
+# 		print("fnord.tif is incompatible filetype.  Try graceful_errors=True")
+# 		#print value
+# 	text = image_file_to_string('fnord.tif', graceful_errors=True, cleanup=False)
+# 	print("fnord.tif contents:", text)
+# 	text = image_file_to_string('fonts_test.png', graceful_errors=True)
+# 	print(text)
+# 	text = image_file_to_string('fonts_test.png', lang="eng", psm=4, graceful_errors=True)
+# 	print(text)
 
 
 

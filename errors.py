@@ -15,4 +15,4 @@ def check_for_errors(logfile = "tesseract.log", error_stream_text = ""):
 		pass
 	# All error conditions result in "Error" somewhere in logfile
 	if error_stream_text.lower().find("error") != -1:
-		raise Tesser_General_Exception, error_stream_text
+		raise Tesser_General_Exception(error_stream_text)

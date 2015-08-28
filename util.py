@@ -20,9 +20,9 @@ def image_to_scratch(im, scratch_image_name):
 
 def	retrieve_text(scratch_text_name_root):
 	if _add_dot_txt_flag:
-		inf = file(scratch_text_name_root + '.txt')
+		inf = open(scratch_text_name_root + '.txt')
 	else:
-		inf = file(scratch_text_name_root)
+		inf = open(scratch_text_name_root)
 	text = inf.read().strip()
 	inf.close()
 	return text
