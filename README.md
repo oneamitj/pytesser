@@ -66,7 +66,7 @@ File Dependencies:
 
 pdf2jpg.py
 =============================================
-This file is a pdf to jpg converter written by Ned Batchelder and original Py2 code can be found [here](version: http://nedbatchelder.com/blog/200712/extracting_jpgs_from_pdfs.html)
+This file is a pdf to jpg converter written by Ned Batchelder and original Py2 code can be found [here](http://nedbatchelder.com/blog/200712/extracting_jpgs_from_pdfs.html)
 
 ###Usage
 
