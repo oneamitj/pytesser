@@ -71,5 +71,12 @@ This file is a pdf to jpg converter written by Ned Batchelder and original Py2 c
 ###Usage
 
 	python3 pdf2jpg.py <path_of_pdf_file>
+	
 
-Output will be files named `jpg#.jpg` in the same folder
+pdf2txt.py
+=============================================
+###Usage
+
+	python pdf2txt.py pdf1 pdf2 pdf3 (...so on)
+
+Output will be files named `<pdf_name>_pg#.txt` in the txt folder.
