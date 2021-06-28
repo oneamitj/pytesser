@@ -10,19 +10,19 @@ along with the Python scripts. The scripts should work in Linux as well.
 
 + PyTesser:
 
->https://github.com/wannamit/pytesser/
+  > https://github.com/wannamit/pytesser/
 
->http://code.google.com/p/pytesser/
+  > http://code.google.com/p/pytesser/
 
 + Tesseract:
 
->http://code.google.com/p/tesseract-ocr/
+  > http://code.google.com/p/tesseract-ocr/
 
 
 Dependencies:
 =============
 - PIL is required to work with images in memory.
->https://pypi.python.org/pypi/Pillow/
+  > https://pypi.python.org/pypi/Pillow/
 - This version of PyTesser has been tested with Python 3.4 in Windows 10 and Python 2.7 in Ubuntu 14.04 LTS.
 - For Linux:
 	+ Add executable permission to all .exe file `chmod +x dlltest.exe tesseract.exe`
@@ -68,14 +68,14 @@ pdf2jpg.py
 =============================================
 This file is a pdf to jpg converter written by Ned Batchelder and original Py2 code can be found [here](http://nedbatchelder.com/blog/200712/extracting_jpgs_from_pdfs.html)
 
-###Usage
+### Usage
 
 	python3 pdf2jpg.py <path_of_pdf_file>
 	
 
 pdf2txt.py
 =============================================
-###Usage
+### Usage
 
 	python pdf2txt.py pdf1 pdf2 pdf3 (...so on)
 
